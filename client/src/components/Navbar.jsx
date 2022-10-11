@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../img/logo.png'
+// import LogoTwo from '../img/logo2.png'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
           <span>Jane</span>
           <span>Logout</span>
           <span className='write'>
-            <Link to='/write'>Write</Link>
+            <Link className='link' to='/write'>Write</Link>
           </span>
         </div>
       </div>
