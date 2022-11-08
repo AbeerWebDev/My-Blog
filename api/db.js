@@ -6,5 +6,3 @@
     password: "!Hanukkahw/2k",
     database: "blog"
  })
-
-
