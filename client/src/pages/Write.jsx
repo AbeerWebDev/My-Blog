@@ -1,6 +1,6 @@
 import axios from 'axios';
 import moment from 'moment';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -14,6 +14,12 @@ const Write = () => {
 
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    setValue(state?.desc || "");
+    setTitle(state?.title || "");
+    setCat(state?.cat || "");
+  }, [state]);
 
   const upload = async () => {
     try {
@@ -56,6 +62,7 @@ const Write = () => {
       <div className="content">
         <input
           type="text"
+          value={title}
           placeholder="Title"
           onChange={(e) => setTitle(e.target.value)}
         />

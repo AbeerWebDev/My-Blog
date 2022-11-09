@@ -9,6 +9,8 @@ const Login = () => {
     password: "",
   });
 
+  const { currentUser } = useContext(AuthContext)
+
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ const Login = () => {
   const { login } = useContext(AuthContext)
 
   const handleChange = (e) => {
-    
+
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -29,17 +31,20 @@ const Login = () => {
       setErr(err.response.data);
     }
   };
+
+  
+
   return (
-    <div className='auth'>
-    <h1>Login</h1>
-    <form>
-      <input required type="text" placeholder='username' name='username' onChange={handleChange}/>
-      <input required type="password" placeholder='password' name='password' onChange={handleChange}/>
-      <button onClick={handleSubmit}>Login</button>
-      {err && <p>{err}</p>}
-      <span>Don't have an account? <Link to="/register">Register</Link></span>
-    </form>
-    </div>
+      <div className='auth'>
+        <h1>Login</h1>
+        <form>
+          <input required type="text" placeholder='username' name='username' onChange={handleChange} />
+          <input required type="password" placeholder='password' name='password' onChange={handleChange} />
+          <button onClick={handleSubmit}>Login</button>
+          {err && <p>{err}</p>}
+          <span>Don't have an account? <Link to="/register">Register</Link></span>
+        </form>
+      </div>
   )
 }
 

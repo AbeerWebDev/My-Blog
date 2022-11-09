@@ -14,48 +14,52 @@ $beige:#e6dad6;
         }
 
         // Login & Register
-        .auth {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: $lightGreen;
-            flex-direction: column;
 
-            h1 {
-                font-size: 20px;
-                color: teal;
-                margin-bottom: 20px;
-            }
-
-            form {
+            .auth {
+                height: 100vh;
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $lightGreen;
                 flex-direction: column;
-                width: 200px;
-                background-color: #fff;
-                gap: 20px;
+                
+                h1 {
+                    font-size: 20px;
+                    color: teal;
+                    margin-bottom: 20px;
+                }
+                
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    width: 200px;
+                    background-color: #fff;
+                    gap: 20px;
                 padding: 50px;
+                border-radius: 10px;
 
                 input {
-                    padding: 10px;
+                    padding: 20px;
                     border: none;
                     border-bottom: 1px solid gray;
                 }
-
+                
                 button {
                     padding: 10px;
+                    margin: 10px;
                     border: none;
                     background-color: teal;
                     color: #fff;
+                    border-radius: 10px;
                     cursor: pointer;
                 }
-
+                
                 p {
                     font-size: 12px;
                     color: red;
                     text-align: center;
                 }
-
+                
                 span {
                     font-size: 14px;
                     text-align: center;
@@ -63,7 +67,7 @@ $beige:#e6dad6;
             }
         }
     }
-
+    
     // Navbar
 
      .navbar {
