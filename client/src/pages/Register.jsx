@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Logo from '../img/logo.png'
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -28,7 +29,12 @@ const Register = () => {
   };
 
   return (
-    <div className="auth">
+    <div className="auth login-page">
+     <div className="logo">
+        <Link to='/'>
+          <img src={Logo} alt="" />
+        </Link>
+        </div>
       <h1>Register</h1>
       <form>
         <input

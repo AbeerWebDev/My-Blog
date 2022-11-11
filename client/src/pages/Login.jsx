@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from '../context/authContext';
+import Logo from '../img/logo.png'
+
 
 const Login = () => {
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
   });
-
-  const { currentUser } = useContext(AuthContext)
 
   const [err, setErr] = useState(null);
 
@@ -35,7 +35,12 @@ const Login = () => {
   
 
   return (
-      <div className='auth'>
+      <div className='auth login-page'>
+      <div className="logo">
+        <Link to='/'>
+          <img src={Logo} alt="" />
+        </Link>
+        </div>
         <h1>Login</h1>
         <form>
           <input required type="text" placeholder='username' name='username' onChange={handleChange} />

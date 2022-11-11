@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import Logo from '../img/logo.png'
-// import LogoTwo from '../img/logo2.png'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/authContext'
 

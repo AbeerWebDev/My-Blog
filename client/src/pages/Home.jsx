@@ -58,7 +58,7 @@ const Home = () => {
   }
 
   return (
-    <div className="home">
+    <div className="home wrap-page">
       <div className="posts">
         {posts.map((post) => (
           <div className="post" key={post.id}>

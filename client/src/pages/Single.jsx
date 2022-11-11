@@ -44,7 +44,7 @@ const Single = () => {
   // }
   
   return (
-    <div className='single'>
+    <div className='single wrap-page'>
       <div className="content">
         <img src={`../upload/${post?.img}`} alt="" />
         <div className="user">

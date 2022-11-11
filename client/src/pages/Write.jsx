@@ -58,7 +58,7 @@ const Write = () => {
   };
 
   return (
-    <div className="add">
+    <div className="add wrap-page">
       <div className="content">
         <input
           type="text"
