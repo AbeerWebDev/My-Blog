@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Logo from '../img/logo1.png'
+import Logo from '../img/logo.png'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/authContext'
 
@@ -32,7 +32,7 @@ const Navbar = () => {
           <Link className='link' to="/?cat=food">
           <h6>FOOD</h6>
           </Link>
-          <span>{currentUser?.username}</span>
+          <span style={{color: "#38a4a4"}}>{currentUser?.username}</span>
           {currentUser ? <span onClick={logout}>Logout</span> : <Link className='link' to='/login'>Login</Link>}
           <span className='write'>
             <Link className='link' to='/write'>Write</Link>
