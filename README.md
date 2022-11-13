@@ -44,7 +44,7 @@ To demonstrate full stack abilities.
 * An Update post page.
 * Dynamic Update/Delete buttons.
 * User registration.
-* User login.
+* User login
 * Filtering posts through categories.
 
 ## Screenshot
