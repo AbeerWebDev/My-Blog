@@ -19,7 +19,6 @@ const Home = () => {
     }
     fetchData();
   }, [cat])
-  
 
   const getText = (html) => {
     const doc = new DOMParser().parseFromString(html, "text/html")
