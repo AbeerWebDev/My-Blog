@@ -8,12 +8,12 @@ export const AuthContextProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
 
     const login = async (inputs) => {
-       const res = await axios.post(`${process.env.REACT_APP_API}/auth/login`, inputs);
+       const res = await axios.post("/auth/login", inputs);
        setCurrentUser(res.data)
     }
 
     const logout = async (inputs) => {
-       await axios.post(`${process.env.REACT_APP_API}/auth/logout`);
+       await axios.post("/auth/logout");
        setCurrentUser(null)
     }
 
@@ -26,3 +26,4 @@ export const AuthContextProvider = ({children}) => {
     )
 } 
 
+//${process.env.REACT_APP_API}
