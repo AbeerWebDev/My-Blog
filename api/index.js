@@ -4,7 +4,7 @@ import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
-import cosrs from 'cors'
+import cors from 'cors'
 
 const app = express();
 
