@@ -21,9 +21,7 @@ export const register = (req, res) => {
             if (err) return res.status(500).json(err);
             return res.status(200).json("User has been created.")
         })
-
     })
-
 }
 
 export const login = (req, res) => {
@@ -48,6 +46,7 @@ export const login = (req, res) => {
       res
         .cookie("access_token", token, {
           httpOnly: true,
+          secure: process.env.NODE_ENV === "development" ? false : true,
         })
         .status(200)
         .json(other);
