@@ -16,19 +16,19 @@ app.use(cors({
   origin: 'https://abeers-blog.netlify.app',
   credentials: true,
 }))
-
-// app.use(
-//   session({
-//     resave: false,
-//     saveUninitialized: false,
-//     secret: "session",
-//     cookie: {
-//       maxAge: 1000 * 60 * 60,
-//       sameSite: "none",
-//       secure: true
-//     },
-//   })
-// )
+app.set("trust proxy", 1)
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "session",
+    cookie: {
+      maxAge: 1000 * 60 * 60,
+      sameSite: "none",
+      secure: true
+    },
+  })
+)
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
