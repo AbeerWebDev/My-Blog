@@ -5,7 +5,7 @@ import postRoutes from "./routes/posts.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import cors from 'cors'
-// import session from 'express-session';
+import session from 'express-session';
 
 
 const app = express();
