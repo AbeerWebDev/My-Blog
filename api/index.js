@@ -5,12 +5,29 @@ import postRoutes from "./routes/posts.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import cors from 'cors'
+import session from 'cookie-session';
+
 
 const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'https://abeers-blog.netlify.app' }))
+app.use(cors({ 
+  origin: 'https://abeers-blog.netlify.app',
+  credentials: true,
+}))
+
+app.use(
+  session({
+    saveUninitialized: false,
+    secret: "session",
+    cookie: {
+      maxAge: 1000 * 60 * 60,
+      sameSite: "none",
+      secure: true
+    }
+  })
+)
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

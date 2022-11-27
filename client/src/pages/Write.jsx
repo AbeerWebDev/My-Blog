@@ -44,7 +44,7 @@ const Write = () => {
             cat,
             img: file ? imgUrl : "",
           })
-        : await axios.post(`${process.env.REACT_APP_API}/posts/`, {
+        : await axios.post(`/posts/`, {
             title,
             desc: value,
             cat,
