@@ -12,10 +12,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ 
-  origin: 'https://abeers-blog.netlify.app',
-  credentials: true,
-}))
+app.use(cors({origin: 'https://abeers-blog.netlify.app'}))
+
 // app.set("trust proxy", 1)
 // app.use(
 //   session({
