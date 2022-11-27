@@ -5,7 +5,7 @@ import postRoutes from "./routes/posts.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import cors from 'cors'
-import session from 'express-session';
+// import session from 'express-session';
 
 
 const app = express();
@@ -17,18 +17,18 @@ app.use(cors({
   credentials: true,
 }))
 app.set("trust proxy", 1)
-app.use(
-  session({
-    resave: false,
-    saveUninitialized: false,
-    secret: "session",
-    cookie: {
-      maxAge: 1000 * 60 * 60,
-      sameSite: "none",
-      secure: true
-    },
-  })
-)
+// app.use(
+//   session({
+//     resave: false,
+//     saveUninitialized: false,
+//     secret: "session",
+//     cookie: {
+//       maxAge: 1000 * 60 * 60,
+//       sameSite: "none",
+//       secure: true
+//     },
+//   })
+// )
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
