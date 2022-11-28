@@ -12,7 +12,13 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin: 'https://abeers-blog.netlify.app'}))
+// app.use(cors({origin: 'https://abeers-blog.netlify.app'}))
+app.use(
+  cors({
+    origin: isDev ? true : "https://abeers-blog.netlify.app",
+    credentials: true,
+  })
+);
 
 // app.set("trust proxy", 1)
 // app.use(
