@@ -13,6 +13,8 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 // app.use(cors({origin: 'https://abeers-blog.netlify.app'}))
+        
+const isDev = process.env.NODE_ENV !== "production";
 app.use(
   cors({
     origin: isDev ? true : "https://abeers-blog.netlify.app",
