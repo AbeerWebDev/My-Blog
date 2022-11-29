@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Edit from '../img/edit.png'
-import Delete from '../img/delete.png'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, useLocation, useNavigate} from 'react-router-dom'
-import Menu from '../components/Menu'
 import axios from 'axios'
 import moment from 'moment'
-import { useContext } from 'react'
-import { AuthContext } from '../context/authContext'
 import DOMPurify from "dompurify";
+import { AuthContext } from '../context/authContext'
+import Menu from '../components/Menu'
+import Edit from '../img/edit.png'
+import Delete from '../img/delete.png'
 
 const Single = () => {
   const [post, setPost] = useState({})
@@ -31,7 +30,9 @@ const Single = () => {
 
   const handleDelete = async() => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API}/posts/${postId}`)
+      await axios.delete(`${process.env.REACT_APP_API}/posts/${postId}`, {
+        withCredentials: true,
+      })
       navigate("/")
     } catch(err) {
       console.log(err)

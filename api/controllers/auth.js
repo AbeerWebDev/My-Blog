@@ -46,7 +46,8 @@ export const login = (req, res) => {
       res
         .cookie("access_token", token, {
           httpOnly: true,
-          secure: process.env.NODE_ENV === "development" ? false : true,
+          sameSite: process.env.NODE_ENV === "development" ? true : "none",
+        secure: process.env.NODE_ENV === "development" ? false : true,
         })
         .status(200)
         .json(other);
@@ -55,7 +56,7 @@ export const login = (req, res) => {
 
 export const logout = (req, res) => {
     res.clearCookie("access_token", {
-        sameSite: "none",
-        secure: true
+        sameSite: process.env.NODE_ENV === "development" ? true : "none",
+      secure: process.env.NODE_ENV === "development" ? false : true,
     }).status(200).json("User is logged out")
 }

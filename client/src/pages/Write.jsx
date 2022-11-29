@@ -43,6 +43,9 @@ const Write = () => {
             desc: value,
             cat,
             img: file ? imgUrl : "",
+          },
+          {
+            withCredentials: true,
           })
         : await axios.post(`${process.env.REACT_APP_API}/posts/`, {
             title,
@@ -50,6 +53,9 @@ const Write = () => {
             cat,
             img: file ? imgUrl : "",
             date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+          },
+          {
+            withCredentials: true,
           });
           navigate("/")
     } catch (err) {
