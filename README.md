@@ -122,8 +122,8 @@ Project is: Completed
 * Add more functionalities
 
 ## Acknowledgements
-* Many thanks to LamaDev.
+* Many thanks to the React development communities.
 
 ## Contact
-Created by Abeer Ahmed [LinkedIn profile](https://www.linkedin.com/in/abeerdev/) - feel free to contact me.
+Created by Abeer Ahmed [LinkedIn profile](https://www.linkedin.com/in/abeerwebdev/) - feel free to contact me.
 
